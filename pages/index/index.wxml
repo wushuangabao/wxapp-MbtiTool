@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <!--
+  <view  bindtap="bindViewTap" class="userinfo">
+  这里原来是这么写的，点击userinfo会跳转到logs页面
+  -->
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto1">{{motto1}}</text>
+    <text class="user-motto2">{{motto2}}</text>
+    <text class="user-motto3">{{motto3}}</text>
+    <image bindtap="goToIntr" src='/img/arrow-right.png' style='width:16px;height:16px;'/>
+  </view>
+</view>

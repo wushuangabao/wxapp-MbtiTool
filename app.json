@@ -1,0 +1,43 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/test/test",
+    "pages/result/result",
+    "pages/logs/logs",
+    "pages/introduction/intr1",
+    "pages/introduction/intr2",
+    "pages/introduction/intr3",
+    "pages/more/more",
+    "pages/more/rec"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "MBTI",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#000000",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/introduction/intr1",
+        "text": "MBTI测试"
+      },
+      {
+        "pagePath": "pages/introduction/intr2",
+        "text": "MBTI简介"
+      },
+      {
+        "pagePath": "pages/introduction/intr3",
+        "text": "八维简介"
+      },
+      {
+        "pagePath": "pages/result/result",
+        "text": "我的人格"
+      }
+    ]
+  }
+}
