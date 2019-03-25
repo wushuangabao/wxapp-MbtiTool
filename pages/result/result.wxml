@@ -48,12 +48,13 @@
     <view class="button">
       <text bindtap="goToMore">更多MBTI相关知识</text>
     </view>
-     <!-- <view class="button">
+    <!-- <view class="button">
       <text bindtap="goToIntr">查看好友们的类型</text>
     </view>  -->
   </view>
 </view>
 <view class="contain5" wx:if="{{!isDone}}">
   <text style="line-hight:100rpx;font-size:30rpx;color:#aaa;margin-top:300rpx;margin-bottom:200rpx;">你还没有进行测试，这里没有结果可以显示。</text>
-  <button class="button" type="primary" bindtap="goToTest" plain="true" size="mini">开始测试</button>
+<button class="button" type="primary" bindtap="goToTest" plain="true" size="mini">开始测试</button>
 </view>
+<ad unit-id="adunit-fc53288104595d2f"></ad>
