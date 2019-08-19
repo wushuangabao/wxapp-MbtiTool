@@ -32,8 +32,11 @@ Page({
    */
   onShow: function () {
     var mbti = wx.getStorageSync('MBTI')
-    if (mbti != undefined && mbti != '') {
+    if (mbti) {
       this.setData({ strStart: "重新测试" })
+    }
+    if (wx.getStorageSync('eight')) {
+      this.setData({ strStart: "继续测试" })
     }
   },
 

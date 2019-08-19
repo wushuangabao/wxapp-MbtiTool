@@ -25,7 +25,6 @@ Page({
 
   //选择了一个答案，触发：
   on_ans: function (envent) {
-    console.log(envent.currentTarget.dataset)
     var old_id = envent.currentTarget.dataset.id
     var bool = envent.currentTarget.dataset.bool
     var id = old_id + 1
@@ -97,17 +96,16 @@ Page({
 
   //判断MBTI类型：
   jud: function () {
-    var rE = this.data.E; var rI = this.data.I; var rS = this.data.S; var rN = this.data.N
-    var rT = this.data.T; var rF = this.data.F; var rJ = this.data.J; var rP = this.data.P
+    var rE = this.data.E, rI = this.data.I, rS = this.data.S, rN = this.data.N,
+        rT = this.data.T, rF = this.data.F, rJ = this.data.J, rP = this.data.P;
     var rEI = (rE) / (rE + rI); var rSN = (rS) / (rS + rN);
     var rTF = (rT) / (rT + rF); var rJP = (rJ) / (rJ + rP);
-    console.log(rEI); console.log(rSN); console.log(rTF); console.log(rJP);
-    var result = ""
     var res1 = rEI > 0.5 ? "E" : "I"
     var res2 = rSN > 0.5 ? "S" : "N"
     var res3 = rTF > 0.5 ? "T" : "F"
     var res4 = rJP > 0.5 ? "J" : "P"
-    result = res1 + res2 + res3 + res4
+    var result = res1 + res2 + res3 + res4
+
     //将测试结果存入缓存，跳换页面
     wx.setStorageSync('MBTI', result)
     wx.setStorageSync('E', rEI)
@@ -123,7 +121,7 @@ Page({
   can_skip: function (id) {
     var u = mbti.mbti[id]
     var char = u.type
-    var pos; var neg
+    var pos, neg
     switch (char) {
       case "E":
         pos = this.data.E
@@ -142,9 +140,9 @@ Page({
         neg = this.data.P
     }
     var n = pos + neg
-    console.log("pos=" + pos)
-    console.log("neg=" + neg)
-    console.log("n=" + n)
+    // console.log("pos=" + pos)
+    // console.log("neg=" + neg)
+    // console.log("n=" + n)
     if (n <= 7) {//n<=7
       return false
     }
@@ -201,51 +199,43 @@ Page({
   },
 
   onLoad: function (options) {
-    wx.setStorageSync('eight', {
-      E: 0, I: 0, S: 0, N: 0,
-      T: 0, F: 0, J: 0, P: 0,
-    })
-    wx.setStorageSync('oldeight', {
-      E: 0, I: 0, S: 0, N: 0,
-      T: 0, F: 0, J: 0, P: 0,
-    })
+    this.tag = false;
+    if(wx.getStorageSync('eight')){
+      var id = wx.getStorageSync('test-id'),
+        qid = wx.getStorageSync('test-qid'),
+        eight = wx.getStorageSync('eight');
+      this.setData({
+        id: id,
+        qid: qid
+      });
+      this.setData(eight);
+    }else{
+      console.log('restart');
+      wx.setStorageSync('eight', {
+        E: 0, I: 0, S: 0, N: 0,
+        T: 0, F: 0, J: 0, P: 0,
+      });
+      wx.setStorageSync('oldeight', {
+        E: 0, I: 0, S: 0, N: 0,
+        T: 0, F: 0, J: 0, P: 0,
+      });
+    }
   },
 
-  onReady: function () {
-
-  },
-
-  onShow: function () {
-
-  },
-
-  onHide: function () {
-
+  quit(){
+    wx.setStorageSync('test-id', this.data.id);
+    wx.setStorageSync('test-qid', this.data.qid);
+    this.tag = true;
+    wx.switchTab({
+      url: '/pages/introduction/intr1'
+    });
   },
 
   onUnload: function () {
-    wx.removeStorageSync('eight')
-    wx.removeStorageSync('oldeight')
+    if(!this.tag){
+      wx.removeStorageSync('eight');
+    }
+    wx.removeStorageSync('oldeight');
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

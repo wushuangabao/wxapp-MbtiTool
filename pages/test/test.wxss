@@ -9,6 +9,12 @@
   align-items: center;
 }
 
+.quit{
+  padding: 22rpx;
+  font-size: 28rpx;
+  color: #aaa;
+}
+
 .blank{
   margin-top: 968rpx;
 }
@@ -24,7 +30,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   box-sizing: border-box;
   width: 600rpx;
   height: 700rpx;
