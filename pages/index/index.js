@@ -11,17 +11,21 @@ Page({
 
   //从首页index进入intr页面（由于是TabBar页面，不能用redirect方法）
   goToIntr(){
-    wx.setStorageSync('gotUserInfo',true);
+    // wx.setStorageSync('gotUserInfo',true);
     wx.switchTab({
       url: '/pages/introduction/intr1'
     })
   },
 
   onLoad(){
-    if (wx.getStorageSync('gotUserInfo'))
+    // if (wx.getStorageSync('gotUserInfo'))
       this.setData({
         buttonText: '进入主页面'
       })
+  },
+
+  onShow(){
+    setTimeout(this.goToIntr, 2000)
   }
 
 })

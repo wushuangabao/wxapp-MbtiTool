@@ -1,5 +1,13 @@
 /**index.wxss**/
 
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: space-around; */
+} 
+
 .userinfo {
   display: flex;
   flex-direction: column;

@@ -8,12 +8,12 @@
     <!-- <image bindtap="goToIntr" src='/img/arrow-right.png' style='width:16px;height:16px;' /> -->
   </view>
 
-    <view class="userinfo">
+    <!-- <view class="userinfo">
     <view class="userinfo-avatar">
       <open-data type="userAvatarUrl" />
     </view>
     <open-data type="userNickName" class="userinfo-nickname" />
     <button bindgetuserinfo="goToIntr" open-type='getUserInfo' class="userinfo-button" size='mini'>{{buttonText}}</button>
-  </view>
+  </view> -->
 
 </view>

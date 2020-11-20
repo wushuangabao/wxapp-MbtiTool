@@ -24,31 +24,31 @@
 
 <view class="contain4">
   <view>
-    <text class="easy-des1">主导功能：</text>
-    <text class="easy-des2">{{mbtiEasyDes[id][0]}}</text>
+    <text class="easy-des1" user-select="true">主导功能：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[id][0]}}</text>
   </view>
   <view>
-    <text class="easy-des1">辅助功能：</text>
-    <text class="easy-des2">{{mbtiEasyDes[id][1]}}</text>
+    <text class="easy-des1" user-select="true">辅助功能：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[id][1]}}</text>
   </view>
   <view>
-    <text class="easy-des1">优点特长：</text>
-    <text class="easy-des2">{{mbtiEasyDes[id][2]}}</text>
+    <text class="easy-des1" user-select="true">优点特长：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[id][2]}}</text>
   </view>
   <view>
-    <text class="easy-des1">缺点短板：</text>
-    <text class="easy-des2">{{mbtiEasyDes[id][3]}}</text>
+    <text class="easy-des1" user-select="true">缺点短板：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[id][3]}}</text>
   </view>
   <view>
-    <text class="easy-des1">常见职业：</text>
-    <text class="easy-des2">{{mbtiEasyDes[id][4]}}</text>
+    <text class="easy-des1" user-select="true">常见职业：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[id][4]}}</text>
   </view>
   <view>
-    <text class="easy-des1">代表人物：</text>
-    <text class="easy-des2">{{mbtiEasyDes[id][5]}}</text>
+    <text class="easy-des1" user-select="true">代表人物：</text>
+    <text class="easy-des2" user-select="true">{{mbtiEasyDes[id][5]}}</text>
   </view>
 </view>
 
 <view class="contain3">
-  <text wx:for="{{mbtiDesArr[id]}}" wx:key="key" class="des">{{item}}</text>
+  <text wx:for="{{mbtiDesArr[id]}}" wx:key="key" class="des" user-select="true">{{item}}</text>
 </view>
